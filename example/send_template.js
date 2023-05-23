@@ -12,7 +12,7 @@ const goodSign = new GoodSign(process.env.API_KEY);
 
 
 // Muliple Attachments
-// goodSign.getTemplate('a8633ff2-7a1f-42fb-87b0-3587f88745e6')
+// goodSign.getDocument('a8633ff2-7a1f-42fb-87b0-3587f88745e6')
 //     .then(template => console.log(template))
 //     .catch(err => console.error(err));
 // return
@@ -38,11 +38,11 @@ payload.name  = 'NDA Simple.pdf'
 payload.signers =  signers
 
 
-// goodSign.sendTemplate(payload)
-//   .then(response => console.log(response))
-//   .catch(error => console.error(error));
-
-const filePath = path.join(__dirname, 'goodsign_guide_v1.4.pdf');
-goodSign.uploadPdf(filePath, payload)
+goodSign.sendTemplate(payload)
   .then(response => console.log(response))
   .catch(error => console.error(error));
+
+// const filePath = path.join(__dirname, 'goodsign_guide_v1.4.pdf');
+// goodSign.uploadPdf(filePath, payload)
+//   .then(response => console.log(response))
+//   .catch(error => console.error(error));

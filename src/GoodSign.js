@@ -13,8 +13,19 @@ class GoodSign {
         this.baseURL = 'https://goodsign.io';
     }
 
-    async getTemplate(templateId) {
-        const response = await axios.get(`https://goodsign.io/api/document/${templateId}`, {
+
+    // List templates
+    async getTemplates() {
+        const response = await axios.get(`https://goodsign.io/api/templates`, {
+            headers: {
+                'Authorization': `Bearer ${this.apiKey}`
+            }
+        });
+        return response.data;
+    }
+
+    async getDocument(uuid) {
+        const response = await axios.get(`https://goodsign.io/api/document/${uuid}`, {
             headers: {
                 'Authorization': `Bearer ${this.apiKey}`
             }
@@ -28,10 +39,10 @@ class GoodSign {
         );
     }
 
-    // Send a template
+    // Send an existing template from GoodSign to one or several signers
     async sendTemplate(payload) {
         try {
-          const response = await axios.post('${this.baseURL}/api/usetemplate', payload, {
+          const response = await axios.post(`${this.baseURL}/api/usetemplate`, payload, {
             headers: {
               'authorization': `Bearer ${this.apiKey}`
             }
@@ -42,7 +53,7 @@ class GoodSign {
         }
     }
 
-    // upload PDF
+    // Upload a PDF file and Payload for processing using TextTags. See the goodsign_guide.pdf for details about TextTags
     async uploadPdf(filePath, payload) {
         const url = `${this.baseURL}/api/uploadpdf`;
         const headers = {
