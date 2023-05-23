@@ -1,0 +1,16 @@
+{
+  "name": "goodsignsdk",
+  "version": "1.0.0",
+  "description": "GoodSign eSignature SDK ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Ballinger",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "form-data": "^4.0.0"
+  }
+}
