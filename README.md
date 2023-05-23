@@ -6,7 +6,7 @@ This is a Node SDK for the GoodSign API. It provides methods to interact with th
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory in your terminal.
-3. Run `bundle install` to install the required gems. Installs dotenv
+3. Run `npm install` which will install required libraries 
 
 ## Usage
 
@@ -18,6 +18,8 @@ GOODSIGN_API_TOKEN=your_api_token
 
 
 Then, you can use the SDK like this:
+cd into the main directory (you will see the src and examples folder. 
+nodejs ./examples/get_tempalates.js # returns a list of templates. 
 
 ```
 
