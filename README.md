@@ -19,7 +19,9 @@ GOODSIGN_API_TOKEN=your_api_token
 
 Then, you can use the SDK like this:
 cd into the main directory (you will see the src and examples folder. 
+```
 nodejs ./examples/get_tempalates.js # returns a list of templates. 
+nodejs ./examples/get_document.js # shows details about a document, you will need to use a valid UUID of a signed document. 
 
 ```
 
