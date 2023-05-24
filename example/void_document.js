@@ -12,7 +12,7 @@ const goodSign = new GoodSign(process.env.API_KEY);
 
 
 // Muliple Attachments
-goodSign.sendReminder('ab02d425-130c-436c-8371-dffdc638d446')
+goodSign.voidDocument('ab02d425-130c-436c-8371-dffdc638d446')
     .then(template => console.log(template))
     .catch(err => console.error(err));
 return

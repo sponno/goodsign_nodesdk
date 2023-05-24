@@ -10,6 +10,11 @@ const goodSign = new GoodSign(process.env.API_KEY);
 const API_KEY=process.env.API_KEY
 
 
+
+let payload = new Payload();
+payload.doc_name  = 'NDA Simple.pdf'
+
+// Who needs to sign
 const signers = [
   {
     key: "signer",
@@ -19,13 +24,7 @@ const signers = [
   }
 ];
 
-let payload = new Payload();
-payload.doc_name  = 'NDA Simple.pdf'
-payload.signers =  new PayloadSigner('signer1','John Ballinger','john@bluespark.co.nz',0)
-
-
-
 const filePath = path.join(__dirname, 'goodsign_guide_v1.4.pdf');
-goodSign.uploadPdf(filePath, payload)
+goodSign.uploadPdf(filePath, payload, signers)
   .then(response => console.log(response))
   .catch(error => console.error(error));
